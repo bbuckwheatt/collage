@@ -1,0 +1,15 @@
+Files needed - 
+TextController - this implementation (class) file is the controller that works with out text view
+TextControllerInterface - Interface for text controller, contains the start method which is needed to start the programs loop to look for user input
+GUIController - this implementation (class) file is the controller for our GUI view
+GUIControllerInterface - Interface for the GUIController, contains methods that any controller intended to work with a GUI would need (ie. methods that delegate to the model)
+IController - Interface that all controllers will implement, contains methods that any controller will need (ie. reading and writing methods, file stuff essentially)
+IFilter - Interface representing all filters that can be applied, needed for the setFilter method in GUIController because it takes in a filter as an arg
+IImage - Interface for images, needed because the ProjectModel interface has a method (getLayersImages) that returns a list of IImages
+IPixel -  Interface for pixels, needed because the method getPixels in IImage returns a 2d array of pixels.
+Project - Overarching model interface that contains simple getters. Implemented by ProjectModel which all models implement
+ProjectModel - Interface for models, contains important methods that manipulate the project and is implemented by all model classes. This interface also implements Project to inherit the getters
+ViewInterface - Interface implemented by all view classes. We need this because, while the GUICotnroller does not need a View, the TextController does take in a view when constructed. This interface contains two methods, renderMessege and renderProject, important for comminicating with the user when bugs occur, and for displaying the project in whatever format needed)
+
+
+

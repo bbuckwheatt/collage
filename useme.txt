@@ -1,0 +1,52 @@
+USEME Functionality of the Collaging Program:
+
+Launching the Collaging Program:
+The program is run through the .jar file. There are three options for running the program. The program can be run through the command line to choose between these three options.
+The options are as follows:
+
+Text:
+	java -jar Collaging.jar -text 
+	
+	This option allows the program to be run through the command line using text-based commands to tell the program what operations to complete and which files to use. Instructions for using the text-based Collager are as follows:
+
+		At the start of the program, there are three valid commands:
+			quit: Immediately quits the program.
+			load-project (file-path): Attempts to load the provided file path of a .collage file to be edited or exported using the Collaging tool.
+			new-project (width, height): attempts to create a new project with the provided width and height. Note, width and height must both be whole, positive numbers.
+			Any other command at this time will result in an error message telling the user to try again.
+		Once a project has been loaded or created, the user now has more options:
+			quit: Immediately quits the program.
+			load-project (file-path): Attempts to load the provided file path of a .collage file to be edited or exported using the Collaging tool. Even if another project is being worked on, this specified project can be loaded and the one being worked on initially will be discarded. Make sure to save progress before doing this with a project already being worked on.
+			new-project (width, height): attempts to create a new project with the provided width and height. Note, width and height must both be whole, positive numbers. Even if another project is being worked on, this new project can be created and the one being worked on initially will be discarded. Make sure to save progress before doing this with a project already being worked on.
+			add-layer (layer-name): this command will add a layer to the given project. Note you must provide a layer name. If the name already exists, a new layer with layer-name(1) will be created for every duplicate created.
+			add-image-to-layer (file-path-to-image, layer-to-add-image-to, image-x, image-y): Adds the image at the provided file path to the provided layer, and places it at the x and y coordinates provided. Note, a layer must exist to complete the operation, otherwise nothing will happen.
+			set-filter (layer-name, filter-name): sets the provided layer's filter to the filter with the name provided. Depending on which filter is provided, different effects will be applied to the images on that layer. Note, a layer must exist to complete the operation, otherwise nothing will happen.
+			save-project (save-path): saves the current project to the designated file path. Please append .collage to the end of any project save files.
+			save-image (save-path): saves the current project as an image to the designated file path. Please append .ppm, .png, .jpg, or .jpeg to the end of any image save files to specify which type of image you wish to save.
+			Any other command at this time will result in an error message telling the user to try again.
+
+Script:
+	java -jar Collaging.jar -file path-of-script-file
+	
+	This will run the program using the specified file provided as a script for the text-based version. The program will run according to the supplied file and finish once it is done. No further action is necessary for this option. Please replace path-of-script-file with the file path to the script you wish to use.
+
+GUI:
+	java -jar Collaging.jar
+	
+	This option launches the GUI, for which instructions are provided below.
+
+Additionally, double-clicking the .jar file will by default launch the GUI. The instructions for using the GUI are as follows:
+
+
+	- new project: in the dropdown menu at the top left of the window labeled 'file', click 'new  project', then enter the desired x and y dimensions of the project.
+	- load project: in the dropdown menu at the top labeled 'file', click 'load project', then navigate to the file you wish to open.
+
+After a project is loaded or created with the above 2 operations:
+	-Add layer: click the add layer button to add a layer
+After at least one layer exists:
+	-add image: when a layer is selected, click the 'add image' button and navigate to the file path of the image you wish to add.
+	-set filter: when a layer is selected, click 'set filter' and select which filter you wish to apply to the designated layer.
+	-Add another layer: additionally, layers can continue to be added at any time once a project is selected or created.
+After changes have been made:
+	-save image: saves the current project as a file to the designated location. Please include the file ending in the name, as this will determine which type of file is created. Options are .ppm, .png, .jpeg, and .jpg.
+	-save project saves the current project as a collage file to the designated location. Please append .collage to the end of the file name. 
